@@ -1,5 +1,7 @@
 # nebula-workbuddy-mcp
 
+![WorkBuddy 本地记忆连接器](docs/cover-workbuddy.png)
+
 > 作者：**yb-zhai** ｜ 仓库：<https://github.com/yb-zhai/nebula-workbuddy>
 
 **记忆星云的 WorkBuddy 版 MCP Server** —— 零依赖、纯本地、离线可用的 Agent 长期记忆，
@@ -191,15 +193,26 @@ node mcp-server.mjs info
 - `handshake.mjs` 读 `mcp.json` 里的 `command/args/env` 原样启动——它通过，等价于
   「WorkBuddy 按这份配置去拉服务」能过。
 
-## 五、已知边界
+## 五、第三方评测
+
+一份 15 页的独立评测，按**接入方式 / 运行方式 / 架构 / 数据链 / 维度 / 服务对象 / 内容 / 提炼 /
+分库 / 存储 / 联网 / 召回 / 可解释性 / 实用性 / 用途**共 15 个维度拆解这个连接器，含本机实测：
+评测时点 28 份会话 / 927 节点 · 944 边 · 3.44 MB、纯本地召回 p50 13 ms、LongMemEval 500 题 Recall@5 99.8%。
+
+结论是同一句话：**用「纯文件 + 规则打分」换来可控、离线、零成本**，代价是纯词面召回的语义天花板
+与约 10 万条的容量边界。
+
+[下载评测 PPT（15 页）](docs/workbuddy-connector-review.pptx)
+
+## 六、已知边界
 
 - `workbuddy.db` 通过 `node:sqlite`（Node ≥22.5，实验特性）只读打开；打开失败（库被锁、
   Node 版本低）会自动降级为「只扫 transcript 目录」，标题缺失但不影响导入。
 - WorkBuddy 运行中导入是安全的：它只读 transcript 和 sqlite（readOnly），写入的是自己的记忆库。
 - 本版是**独立包**，引擎在 `memory/` 有副本。引擎改动请在 `nebula-memory-mcp` 那条线上做，
   然后 `node scripts/sync-engine.mjs` 同步过来（`--check` 只比对不写）。
-- 当前没有发布 npm：`agent-memory` 这个包名在 npm 上已被他人占用（一个空壳包），
-  不能用 `npx -y agent-memory`。本包计划用 `nebula-workbuddy-mcp` 名字发布。
+- 已发布到 npm：`nebula-workbuddy-mcp@1.0.2`，可用 `npx -y nebula-workbuddy-mcp` 拉起。
+  注意别和 npm 上的 `agent-memory`（他人占用的空壳包）、`agent-memory-mcp`（他人的同名项目）混淆。
 
 ## License
 
