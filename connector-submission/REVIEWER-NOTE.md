@@ -2,6 +2,41 @@
 
 > 用途：提交时填在审核备注里，或审核方提出「MCP Server 已部署、可公网访问」疑问时直接回复。
 > 本文件**不随连接器包上传**（同 `check.mjs` / `mcp-npx.json`）。
+---
+
+## 审核备注（可直接粘贴，短版）
+
+### 极简版（170 字，备注框窄时用）
+
+```text
+本连接器为本地 stdio MCP，无服务端、无需公网，用户侧零安装（npx + runtime.node 由
+WorkBuddy 托管 Node）。验证：npx -y nebula-workbuddy-mcp info 应输出 JSON、退出码 0；
+接入后握手返回 8 个工具。纯本地、无认证、数据不出本机。包已发布 nebula-workbuddy-mcp@1.0.1。
+```
+
+### 标准版（634 字，备注框够用时用这个）
+
+```text
+1. 形态：本地 stdio MCP（command: npx + runtime: node>=18），由 WorkBuddy 拉起子进程，
+   不依赖任何公网服务。官方文档「支持的传输方式」明确把 stdio 列为「本地进程（如通过
+   npx 运行）」，其 mcp.json 示例与本连接器结构一致。因此「Server 已部署、可公网访问」
+   这条对 sse/streamableHttp 适用；对 stdio，等价要求是「包已发布、可被 npx 稳定拉取」，
+   已满足。
+
+2. 验证：npm view nebula-workbuddy-mcp version → 1.0.1；npx -y nebula-workbuddy-mcp info
+   → 退出码 0、输出 JSON；用任意 MCP 客户端以 stdio 方式拉起，握手返回 serverInfo
+   {"name":"nebula-workbuddy-mcp","version":"1.0.1"} 与 8 个工具（recall / remember /
+   recall_context / stats / forget / compact / import_workbuddy / workbuddy_info）。
+
+3. 安全与隔离：零依赖、纯本地，无 Token/密钥，无认证（按规范省略 auth_mode）；记忆数据
+   写入 ~/.workbuddy/nebula-memory；Node 由 WorkBuddy 托管并隔离安装位置，不写用户全局
+   npm 环境。
+
+4. 如需更详细说明（传输形态依据原文、mcp.json 逐字段解释、常见疑问），可随时联系我补充。
+```
+
+> 下面是从头解释的完整版，供审核方追问时使用，一般不必粘贴。
+
 
 ## 一句话结论
 
