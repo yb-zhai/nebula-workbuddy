@@ -17,6 +17,5 @@
     "What was the preference I asked you to remember last time?",
     "Import my WorkBuddy sessions from the last 90 days and remember my preferences",
     "What was the conclusion from the earlier desktop audio stutter investigation?"
-  ],
-  "_comment": "auth_mode omitted on purpose: this is a fully local MCP with no authentication (per official docs, omit auth_mode for no-auth servers)."
+  ]
 }
