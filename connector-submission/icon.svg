@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Nebula Memory">
+  <title>Nebula Memory · WorkBuddy</title>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f8cff"/>
+      <stop offset="65%" stop-color="#2f5fd0"/>
+      <stop offset="100%" stop-color="#1b3a8a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="31" r="21" fill="url(#g)" opacity="0.18"/>
+  <g fill="none" stroke="#2f5fd0" stroke-width="1.6" opacity="0.75">
+    <ellipse cx="32" cy="31" rx="24" ry="10" transform="rotate(-18 32 31)"/>
+    <ellipse cx="32" cy="31" rx="24" ry="10" transform="rotate(42 32 31)"/>
+    <ellipse cx="32" cy="31" rx="24" ry="10" transform="rotate(102 32 31)"/>
+  </g>
+  <g fill="#4f8cff">
+    <circle cx="18" cy="22" r="3.1"/>
+    <circle cx="45" cy="19" r="2.5"/>
+    <circle cx="50" cy="40" r="3.4"/>
+    <circle cx="24" cy="46" r="2.2"/>
+    <circle cx="38" cy="34" r="2.0"/>
+  </g>
+  <circle cx="32" cy="31" r="7.5" fill="#1b3a8a"/>
+  <circle cx="32" cy="31" r="4.2" fill="#eaf1ff"/>
+  <circle cx="30" cy="29" r="1.4" fill="#ffffff"/>
+</svg>

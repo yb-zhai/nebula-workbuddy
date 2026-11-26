@@ -1,0 +1,47 @@
+{
+  "name": "nebula-workbuddy-mcp",
+  "version": "1.0.0",
+  "description": "WorkBuddy 版记忆星云 MCP Server：零依赖本地记忆引擎 + WorkBuddy 历史会话导入，stdio JSON-RPC，离线可用。",
+  "type": "module",
+  "bin": {
+    "nebula-workbuddy-mcp": "mcp-server.mjs"
+  },
+  "files": [
+    "mcp-server.mjs",
+    "importer.mjs",
+    "workbuddy.mjs",
+    "memory/",
+    "shared/",
+    "install.mjs",
+    "verify.mjs",
+    "handshake.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "workbuddy",
+    "memory",
+    "agent",
+    "local",
+    "zero-dependency",
+    "offline"
+  ],
+  "license": "MIT",
+  "author": "yb-zhai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yb-zhai/agent-memory.git"
+  },
+  "scripts": {
+    "start": "node mcp-server.mjs",
+    "verify": "node verify.mjs",
+    "install:workbuddy": "node install.mjs",
+    "uninstall:workbuddy": "node install.mjs --uninstall",
+    "import": "node mcp-server.mjs import",
+    "sync:engine": "node scripts/sync-engine.mjs"
+  }
+}

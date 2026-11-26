@@ -1,0 +1,16 @@
+{
+  "_comment": "npm 发布后用这一份替换 mcp.json 提交。runtime 声明让 WorkBuddy 托管 Node（用户无需自己装 Node），registry 用国内镜像加快拉取。",
+  "mcpServers": {
+    "nebula-workbuddy-memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "nebula-workbuddy-mcp"],
+      "env": {
+        "NEBULA_DATA_DIR": "${HOME}\\.workbuddy\\nebula-memory"
+      },
+      "runtime": { "type": "node", "version": ">=18.0.0" },
+      "npmRegistry": "https://registry.npmmirror.com",
+      "timeout": 30000
+    }
+  }
+}

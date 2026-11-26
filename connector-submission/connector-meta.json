@@ -1,0 +1,22 @@
+{
+  "name": "记忆星云 · WorkBuddy 本地记忆",
+  "name_zh": "记忆星云 · WorkBuddy 本地记忆",
+  "name_en": "Nebula Memory for WorkBuddy",
+  "description": "Zero-dependency local memory for WorkBuddy: cross-session recall, import your WorkBuddy history, offline and private.",
+  "description_zh": "给 WorkBuddy 装上跨会话的本地记忆：零依赖、纯本地、断网可用，可一键导入 WorkBuddy 历史会话。数据不出本机、不花 Token。",
+  "description_en": "Add cross-session local memory to WorkBuddy: zero-dependency, fully offline, imports your WorkBuddy history. Data stays on your machine, no API keys, no token cost.",
+  "source": "nebula-workbuddy-memory",
+  "type": "mcp",
+  "version": "1.0.0",
+  "examples_zh": [
+    "我上次让你记的那个偏好是什么？",
+    "导入我最近 90 天的 WorkBuddy 历史会话，然后记住我的偏好",
+    "之前排查桌面语音卡顿的结论是什么？"
+  ],
+  "examples_en": [
+    "What was the preference I asked you to remember last time?",
+    "Import my WorkBuddy sessions from the last 90 days and remember my preferences",
+    "What was the conclusion from the earlier desktop audio stutter investigation?"
+  ],
+  "_comment": "auth_mode omitted on purpose: this is a fully local MCP with no authentication (per official docs, omit auth_mode for no-auth servers)."
+}
