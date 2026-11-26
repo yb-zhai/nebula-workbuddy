@@ -1,6 +1,6 @@
 # nebula-workbuddy-mcp
 
-> 作者：**yb-zhai** ｜ 仓库：<https://github.com/yb-zhai/agent-memory>
+> 作者：**yb-zhai** ｜ 仓库：<https://github.com/yb-zhai/nebula-workbuddy>
 
 **记忆星云的 WorkBuddy 版 MCP Server** —— 零依赖、纯本地、离线可用的 Agent 长期记忆，
 通过标准 MCP（stdio JSON-RPC 2.0）接进 WorkBuddy，并把 WorkBuddy 自己的历史会话导进记忆库。
@@ -14,9 +14,46 @@
 | 工具描述 | 通用 | 按 WorkBuddy Agent 的中文语境重写，强调「动手前先 recall」 |
 | WorkBuddy 历史 | 无 | `import_workbuddy`：导入 memory.md + 本地会话 transcript；`workbuddy_info`：探测路径与导入水位 |
 
-## 一、接入（本机三步）
+## 一、接入
+
+**不用下载、不用预装 Node、不用注册、不用认证。** 三步搞定。
+
+### 方式 A：WorkBuddy 界面添加（推荐，约 30 秒）
+
+打开 WorkBuddy →「**MCP 服务管理**」→ 右上「**+ 添加 MCP**」，填：
+
+```
+名称：nebula-memory
+命令：npx
+参数：-y nebula-workbuddy-mcp
+```
+
+保存后**重启 WorkBuddy**，在 MCP 列表看到 `nebula-memory` 是**绿色、8/8 工具已启用**即成功。
+
+> **环境变量不用填。** 记忆库默认落在 `~/.workbuddy/nebula-memory`
+> （代码：`process.env.NEBULA_DATA_DIR || path.join(workbuddyHome(), 'nebula-memory')`）。
+
+### 方式 B：直接改 `~/.workbuddy/mcp.json`
+
+已有其他 MCP 的话，把 `nebula-memory` 这一条合并进现有的 `mcpServers`：
+
+```json
+{
+  "mcpServers": {
+    "nebula-memory": {
+      "command": "npx",
+      "args": ["-y", "nebula-workbuddy-mcp"]
+    }
+  }
+}
+```
+
+### 方式 C：本地源码（要改代码或锁定版本时用）
 
 ```powershell
+git clone https://github.com/yb-zhai/nebula-workbuddy.git
+cd nebula-workbuddy
+
 # 1. 写进 ~/.workbuddy/mcp.json（自动备份原文件，只动自己那一条）
 node install.mjs
 
@@ -27,27 +64,18 @@ node mcp-server.mjs import --days 90
 node handshake.mjs --query "上次那个问题" --query "我的偏好"
 ```
 
-然后**重启 WorkBuddy**，在「插件 → MCP 服务器」确认 `nebula-memory` 是绿色，
-工具列表里能看到 `recall / remember / recall_context / import_workbuddy`。
+这种方式写入的是**绝对路径**（`process.execPath` + 本机脚本路径），
+好处是版本完全由你控制，坏处是换机器要重装。卸载：`node install.mjs --uninstall`
+（记忆库目录保留，删不删随你）。
 
-写入后的 `~/.workbuddy/mcp.json`：
+### 确认装好了没
 
-```json
-{
-  "mcpServers": {
-    "nebula-memory": {
-      "command": "D:\\Tools\\nodejs\\node-v22.23.5-win-x64\\node.exe",
-      "args": ["E:\\DSHN\\build\\nebula-workbuddy-mcp\\mcp-server.mjs"],
-      "env": { "NEBULA_DATA_DIR": "C:\\Users\\<你>\\.workbuddy\\nebula-memory" }
-    }
-  }
-}
+```powershell
+npx -y nebula-workbuddy-mcp info
 ```
 
-> `command` 用的是安装时的 `process.execPath`（绝对路径），避免 WorkBuddy 的 PATH
-> 里 Node 版本不确定。想换回 `node` 或别处，改 `mcp.json` 即可。
-
-卸载：`node install.mjs --uninstall`（记忆库目录保留，删不删随你）。
+能输出一段 JSON（含 `workbuddy.home` / `memory.dir` 等路径）且不报错，就说明包本身没问题；
+再重启 WorkBuddy，看 MCP 列表里的状态灯。
 
 ## 二、工具
 
