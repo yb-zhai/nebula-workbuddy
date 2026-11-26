@@ -26,12 +26,12 @@ connector-submission/
 | `mcp.json` | **已是 npx 版**（2026-11-26 切换完成） | ✅ 可直接提交 |
 | `mcp-npx.json` | 备份参考，内容与当前 `mcp.json` 相同 | — |
 
-**npm 已发布**：`nebula-workbuddy-mcp@1.0.0`（2026-11-26）。`mcp.json` 已用 npx 版覆盖、
+**npm 已发布**：`nebula-workbuddy-mcp@1.0.1`（2026-11-26）。`mcp.json` 已用 npx 版覆盖、
 `_comment` 已删，`node check.mjs` 全部通过。本地源码版的旧配置备份为
 `mcp.json.bak-localpath-20261126-190223`，**仅留档，不要提交**。
 
 > 首次发布会短暂出现 `0.0.0-stage` 占位版本（npm 对新包名的处理产物），已用
-> `npm deprecate` 标记。它不影响 `npx -y nebula-workbuddy-mcp` —— `dist-tags.latest` 始终指向 `1.0.0`。
+> `npm deprecate` 标记。它不影响 `npx -y nebula-workbuddy-mcp` —— `dist-tags.latest` 始终指向最新版。
 
 ### 2. `source` 唯一性
 
