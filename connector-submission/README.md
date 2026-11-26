@@ -7,14 +7,16 @@
 
 ```
 connector-submission/
-├── connector-meta.json          # 元信息（source 全局唯一，无认证省略 auth_mode）
-├── mcp.json                     # 提交用：开发机绝对路径版
-├── mcp-npx.json                 # npm 发布后替换 mcp.json 用（npx + runtime 托管）
-├── icon.svg                     # 市场图标，64×64，透明背景
+├── connector-meta.json          # 元信息（source 全局唯一，无认证省略 auth_mode）  ← 上传
+├── mcp.json                     # 提交用：已是 npx 版                             ← 上传
+├── icon.svg                     # 市场图标，64×64，透明背景                      ← 上传
 ├── skills/
 │   └── nebula-workbuddy-memory-skill/
-│       └── SKILL.md             # 8 个工具的使用说明
-└── check.mjs                    # 本地校验脚本（不上传）
+│       └── SKILL.md             # 8 个工具的使用说明                             ← 上传
+├── mcp-npx.json                 # 备份参考，内容与 mcp.json 相同（不上传）
+├── REVIEWER-NOTE.md             # 给审核方的 stdio 合规说明，填备注/回复用（不上传）
+├── check.mjs                    # 本地校验脚本（不上传）
+└── *.bak-*                      # 开发机绝对路径备份（不上传）
 ```
 
 ## 提交前必须做的两件事
