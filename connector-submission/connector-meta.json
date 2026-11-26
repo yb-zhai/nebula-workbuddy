@@ -7,7 +7,7 @@
   "description_en": "Add cross-session local memory to WorkBuddy: zero-dependency, fully offline, imports your WorkBuddy history. Data stays on your machine, no API keys, no token cost.",
   "source": "nebula-workbuddy-memory",
   "type": "mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "examples_zh": [
     "我上次让你记的那个偏好是什么？",
     "导入我最近 90 天的 WorkBuddy 历史会话，然后记住我的偏好",

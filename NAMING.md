@@ -2,7 +2,7 @@
 
 | 层面 | 名字 | 状态 |
 |---|---|---|
-| npm 包名 | `nebula-workbuddy-mcp` | ✅ **已发布 1.0.0 / 1.0.1** |
+| npm 包名 | `nebula-workbuddy-mcp` | ✅ **已发布 1.0.0 / 1.0.1 / 1.0.2** |
 | GitHub 仓库 | `yb-zhai/nebula-workbuddy` | ✅ 已建并推送（仓库名比包名少 `-mcp`，为了以后能扩内容） |
 | WorkBuddy server id（面板显示名） | `nebula-memory` | ✅ 已配置、已信任、已缓存，不再改 |
 | 本地项目目录 | `E:\DSHN\build\nebula-workbuddy-mcp` | ✅ 保持 |

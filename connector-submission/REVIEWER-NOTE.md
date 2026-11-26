@@ -11,7 +11,7 @@
 ```text
 本连接器为本地 stdio MCP，无服务端、无需公网，用户侧零安装（npx + runtime.node 由
 WorkBuddy 托管 Node）。验证：npx -y nebula-workbuddy-mcp info 应输出 JSON、退出码 0；
-接入后握手返回 8 个工具。纯本地、无认证、数据不出本机。包已发布 nebula-workbuddy-mcp@1.0.1。
+接入后握手返回 8 个工具。纯本地、无认证、数据不出本机。包已发布 nebula-workbuddy-mcp@1.0.2。
 ```
 
 ### 标准版（634 字，备注框够用时用这个）
@@ -23,9 +23,9 @@ WorkBuddy 托管 Node）。验证：npx -y nebula-workbuddy-mcp info 应输出 J
    这条对 sse/streamableHttp 适用；对 stdio，等价要求是「包已发布、可被 npx 稳定拉取」，
    已满足。
 
-2. 验证：npm view nebula-workbuddy-mcp version → 1.0.1；npx -y nebula-workbuddy-mcp info
+2. 验证：npm view nebula-workbuddy-mcp version → 1.0.2；npx -y nebula-workbuddy-mcp info
    → 退出码 0、输出 JSON；用任意 MCP 客户端以 stdio 方式拉起，握手返回 serverInfo
-   {"name":"nebula-workbuddy-mcp","version":"1.0.1"} 与 8 个工具（recall / remember /
+   {"name":"nebula-workbuddy-mcp","version":"1.0.2"} 与 8 个工具（recall / remember /
    recall_context / stats / forget / compact / import_workbuddy / workbuddy_info）。
 
 3. 安全与隔离：零依赖、纯本地，无 Token/密钥，无认证（按规范省略 auth_mode）；记忆数据
@@ -110,7 +110,7 @@ WorkBuddy 连接器文档「支持的传输方式」一节：
 npm view nebula-workbuddy-mcp version dist-tags
 ```
 
-期望：`version = '1.0.1'`，`dist-tags = { latest: '1.0.1' }`
+期望：`version = '1.0.2'`，`dist-tags = { latest: '1.0.2' }`
 
 ### 2. 直接拉起并检查能力（与 WorkBuddy 内部一致）
 
@@ -136,7 +136,7 @@ args:    ["-y", "nebula-workbuddy-mcp"]
 
 客户端会自动发送 `initialize` → `tools/list`，应返回：
 
-- `serverInfo = {"name":"nebula-workbuddy-mcp","version":"1.0.1"}`
+- `serverInfo = {"name":"nebula-workbuddy-mcp","version":"1.0.2"}`
 - `protocolVersion = 2025-06-18`
 - **8 个工具**：`recall` / `remember` / `recall_context` / `stats` /
   `forget` / `compact` / `import_workbuddy` / `workbuddy_info`
@@ -147,7 +147,7 @@ args:    ["-y", "nebula-workbuddy-mcp"]
 我们实测结果：
 
 ```
-[PASS] 握手成功（serverInfo）     → {"name":"nebula-workbuddy-mcp","version":"1.0.1"}
+[PASS] 握手成功（serverInfo）     → {"name":"nebula-workbuddy-mcp","version":"1.0.2"}
 [PASS] 协议版本                  → 2025-06-18
 [PASS] tools/list                → recall, remember, recall_context, stats,
                                    forget, compact, import_workbuddy, workbuddy_info
@@ -183,7 +183,7 @@ A：`recall`（检索）、`remember`（写入）、`recall_context`（生成可
 
 | 项 | 值 |
 |---|---|
-| npm 包 | `nebula-workbuddy-mcp@1.0.1`（公开） |
+| npm 包 | `nebula-workbuddy-mcp@1.0.2`（公开） |
 | 源码仓库 | https://github.com/yb-zhai/nebula-workbuddy |
 | 许可证 | MIT |
 | 依赖数量 | **0**（纯 Node 标准库） |

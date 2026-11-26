@@ -1,6 +1,6 @@
 {
   "name": "nebula-workbuddy-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WorkBuddy 版记忆星云 MCP Server：零依赖本地记忆引擎 + WorkBuddy 历史会话导入，stdio JSON-RPC，离线可用。",
   "type": "module",
   "bin": {

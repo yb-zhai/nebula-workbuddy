@@ -28,7 +28,7 @@ connector-submission/
 | `mcp.json` | **已是 npx 版**（2026-11-26 切换完成） | ✅ 可直接提交 |
 | `mcp-npx.json` | 备份参考，内容与当前 `mcp.json` 相同 | — |
 
-**npm 已发布**：`nebula-workbuddy-mcp@1.0.1`（2026-11-26）。`mcp.json` 已用 npx 版覆盖、
+**npm 已发布**：`nebula-workbuddy-mcp@1.0.2`（2026-11-26）。`mcp.json` 已用 npx 版覆盖、
 `_comment` 已删，`node check.mjs` 全部通过。本地源码版的旧配置备份为
 `mcp.json.bak-localpath-20261126-190223`，**仅留档，不要提交**。
 

@@ -40,7 +40,7 @@ const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const { NebulaMemory } = require(path.join(__dirname, 'memory', 'store.cjs'))
 
-const VERSION = '1.0.1'
+const VERSION = '1.0.2'
 const SERVER_INFO = { name: 'nebula-workbuddy-mcp', version: VERSION }
 
 // ── 配置 ────────────────────────────────────────────────────────────────
