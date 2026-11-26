@@ -34,7 +34,7 @@
   "author": "yb-zhai",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yb-zhai/agent-memory.git"
+    "url": "git+https://github.com/yb-zhai/nebula-workbuddy.git"
   },
   "scripts": {
     "start": "node mcp-server.mjs",
