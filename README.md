@@ -214,6 +214,10 @@ node mcp-server.mjs info
 - 已发布到 npm：`nebula-workbuddy-mcp@1.0.2`，可用 `npx -y nebula-workbuddy-mcp` 拉起。
   注意别和 npm 上的 `agent-memory`（他人占用的空壳包）、`agent-memory-mcp`（他人的同名项目）混淆。
 
-## License
+## 许可
 
-MIT © 2026 yb-zhai
+- 代码：MIT，见 [LICENSE](LICENSE)，`Copyright (c) 2026 yb-zhai`
+- 素材（`docs/` 下的图片、`connector-submission/icon.svg`）：随项目 MIT，均为自产
+- **二次创作（二创）约定**：基于本项目的衍生 / 改版 / 换皮作品，在 **GitHub 仓库、产品官网等公开渠道**上须附上原作者 GitHub 地址：<https://github.com/yb-zhai/nebula-workbuddy>，并标注明「基于 yb-zhai/nebula-workbuddy 修改」，简述改动
+- **上游**：`memory/` 与 `shared/` 是 [yb-zhai/agent-memory](https://github.com/yb-zhai/agent-memory) 引擎的副本（同一作者，MIT），随本仓库一并分发；引擎改动请回到上游进行，再用 `node scripts/sync-engine.mjs` 同步
+- **第三方**：本项目**零运行时依赖**（`dependencies` 恒为空）；可选的外部记忆后端遵循其自身许可，不随本仓库分发
