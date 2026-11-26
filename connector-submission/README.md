@@ -1,5 +1,21 @@
 # WorkBuddy 开放平台连接器提交材料
 
+> ## 📌 当前状态：**参考保留，暂不提交**
+>
+> **作者没有营业执照，无法完成企业认证 → 走不了官方连接器市场上架。**
+> 本目录的材料**完整保留作参考**，等有企业主体时可直接拿来用；
+> 门槛说明（第 1 节的企业认证更正）也一并保留，便于日后复核平台规则。
+>
+> **实际分发只走这三条，全程无需任何认证：**
+>
+> | 方式 | 入口 |
+> |---|---|
+> | **npm + 手动接入**（主推） | `npx -y nebula-workbuddy-mcp`，在 WorkBuddy「MCP 服务管理 → 添加 MCP」填命令与参数即可 |
+> | **直接改配置** | 编辑 `~/.workbuddy/mcp.json`，加入 `nebula-memory` 一条 |
+> | **GitHub 分发** | <https://github.com/yb-zhai/nebula-workbuddy>，clone 后 `node install.mjs` |
+>
+> 三种方式的完整步骤见下方「不进市场的分发方式」一节。
+
 按官方文档 <https://open.workbuddy.cn/docs/connector> 的 MCP + Skill 规范准备。
 本地校验：`node check.mjs`（已注入故障验证过校验器能抓错）。
 
