@@ -215,8 +215,9 @@ node mcp-server.mjs info
 - WorkBuddy 运行中导入是安全的：它只读 transcript 和 sqlite（readOnly），写入的是自己的记忆库。
 - 本版是**独立包**，引擎在 `memory/` 有副本。引擎改动请在 `nebula-memory-mcp` 那条线上做，
   然后 `node scripts/sync-engine.mjs` 同步过来（`--check` 只比对不写）。
-- 已发布到 npm：`nebula-workbuddy-mcp@1.0.2`，可用 `npx -y nebula-workbuddy-mcp` 拉起。
+- 已发布到 npm：`nebula-workbuddy-mcp@1.0.3`，可用 `npx -y nebula-workbuddy-mcp` 拉起。
   注意别和 npm 上的 `agent-memory`（他人占用的空壳包）、`agent-memory-mcp`（他人的同名项目）混淆。
+  发版流程与已知坑见 [RELEASE.md](RELEASE.md)（staged 窗口会临时 404、2FA-bypass token 2027-01 停用）。
 
 ## 许可
 
