@@ -1,6 +1,6 @@
 # nebula-workbuddy-mcp
 
-![WorkBuddy 本地记忆连接器](docs/cover-workbuddy.png)
+![WorkBuddy 本地记忆连接器](https://raw.githubusercontent.com/yb-zhai/nebula-workbuddy/master/docs/cover-workbuddy.png)
 
 > 作者：**yb-zhai** ｜ 仓库：<https://github.com/yb-zhai/nebula-workbuddy>
 
@@ -202,7 +202,7 @@ node mcp-server.mjs info
 结论是同一句话：**用「纯文件 + 规则打分」换来可控、离线、零成本**，代价是纯词面召回的语义天花板
 与约 10 万条的容量边界。
 
-[下载评测 PPT（15 页）](docs/workbuddy-connector-review.pptx)
+[下载评测 PPT（15 页）](https://github.com/yb-zhai/nebula-workbuddy/blob/master/docs/workbuddy-connector-review.pptx)
 
 ## 六、已知边界
 
