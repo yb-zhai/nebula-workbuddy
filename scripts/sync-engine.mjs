@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  *
  * 引擎同步：本项目的 memory/ 与 shared/ 是 nebula-memory-mcp 的副本。
  * 引擎（store.cjs 等）只在那条线上改，改完跑这个脚本同步过来，避免两套实现漂移。

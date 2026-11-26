@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * 按「WorkBuddy 实际会用的配置」验证接入：
  * 直接读 ~/.workbuddy/mcp.json 里那一条，用它的 command / args / env 把服务拉起来，
  * 走真实 MCP 握手 + tools/list + stats + 若干条 recall。

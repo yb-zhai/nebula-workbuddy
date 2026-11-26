@@ -1,5 +1,5 @@
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * WorkBuddy → 记忆星云 导入器。
  *
  * 只读 WorkBuddy 的数据，不写它任何文件；写进记忆库的是：

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * nebula-workbuddy-mcp —— 记忆星云（NebulaMemory）的 WorkBuddy 版 MCP Server。
  *
  * 和通用版 nebula-memory-mcp 的区别只有三处，引擎完全相同：

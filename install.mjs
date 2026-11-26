@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * 把本 MCP Server 写进 WorkBuddy 的 ~/.workbuddy/mcp.json。
  *
  *   node install.mjs                       # 安装 / 更新

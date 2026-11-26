@@ -1,5 +1,5 @@
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * WorkBuddy 数据桥 —— 只读，不改 WorkBuddy 任何文件。
  *
  * 这一层负责把 WorkBuddy 自己的本地数据翻译成记忆条目：

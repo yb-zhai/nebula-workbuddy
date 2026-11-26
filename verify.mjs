@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/agent-memory
+ * 作者：yb-zhai · 仓库：https://github.com/yb-zhai/nebula-workbuddy
  * 端到端自检：真的把 mcp-server.mjs 当子进程拉起来，走一遍 MCP 握手和工具调用。
  * 用临时记忆库，不碰用户的 ~/.workbuddy/nebula-memory。
  *
